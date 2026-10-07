@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Мой сайт</title>
+
+    <style>
+        body {
+            background: #f2e6ff;
+            text-align: center;
+            font-family: Arial;
+            padding-top: 100px;
+        }
+
+        h1 {
+            color: #7b2cbf;
+            font-size: 40px;
+        }
+
+        p {
+            color: #444;
+            font-size: 20px;
+        }
+
+        img {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            background: #7b2cbf;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Приветствую дружище!</h1>
+
+    <p id="text">Это первый созданный мною сайт!</p>
+
+    <img src="myphoto.jpg" alt="Моя картинка">
+
+    <button onclick="sayHello()">Нажми меня</button>
+
+    <button onclick="changeColor()">Сменить тему</button>
+    <h2>🎯 Угадай число</h2>
+    <p>Я загадала число от 1 до 10. Попробуй угадать!</p>
+
+    <input id="guess" type="number" min="1" max="10">
+
+    <button onclick="checkGuess()">Проверить</button>
+
+    <p id="result"></p>
+
+    <script>
+        function sayHello() {
+            document.getElementById("text").textContent =
+                "Лиля я тебя люблю!❤️";
+        }
+
+        let pinkTheme = false;
+
+        function changeColor() {
+            if (pinkTheme === false) {
+                document.body.style.backgroundColor = "pink";
+                pinkTheme = true;
+            } else {
+                document.body.style.backgroundColor = "#f2e6ff";
+                pinkTheme = false;
+            }
+        }
+
+        let clicks = 0;
+
+        function countClick() {
+            clicks = clicks + 1;
+
+    document.getElementById("counter").textContent = clicks;
+        }
+
+        let secretNumber = Math.floor(Math.random()*10) + 1;
+
+     function checkGuess() {
+    let guess = document.getElementById("guess").value;
+    let result = document.getElementById("result");
+
+    if (guess == secretNumber) {
+        result.textContent = "🎉 Ты угадала!";
+    } else if (guess < secretNumber) {
+        result.textContent = "👀 Слишком мало!";
+    } else {
+        result.textContent = "😏 Слишком много!";
+    }
+}
+
+    </script>
+
+</body>
+</html>
