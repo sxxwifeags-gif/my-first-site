@@ -1,82 +1,154 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
+
+    <!-- Адаптация под телефон -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Мой сайт</title>
 
     <style>
+
         html {
             scroll-behavior: smooth;
         }
 
-        body {
-           margin: 0;
-            padding-top: 90px;
-            background: #050014;
-            color: whitesmoke;
-            text-align: center;
-            font-family: Arial, sans-serif;
-             
+        * {
+            box-sizing: border-box;
         }
 
-        /*МЕНЮ*/
+        body {
+            margin: 0;
+            padding-top: 90px;
+            background: #050014;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           МЕНЮ
+        ========================= */
 
         nav {
             position: fixed;
             top: 0;
             left: 0;
+
             width: 100%;
-            padding: 25px 0;
+
+            padding: 25px 10px;
+
             background: rgba(5, 0, 20, 0.9);
+
             backdrop-filter: blur(10px);
-            box-shadow: 0 0 25px #ff00aa;
+
+            box-shadow:
+                0 0 25px #ff00aa;
+
             z-index: 1000;
         }
 
         nav a {
+            display: inline-block;
+
             margin: 0 18px;
+
             color: #00d9ff;
+
             text-decoration: none;
+
             font-size: 18px;
             font-weight: bold;
+
             transition: 0.3s;
         }
 
         nav a:hover {
             color: #ff1493;
-            text-shadow: 0 0 10px #ff1493
-                         0 0 20px #ff1493
+
+            text-shadow:
+                0 0 10px #ff1493,
+                0 0 20px #ff1493;
         }
-        
-        /*ЗАГОЛОВОК*/
+
+
+        /* =========================
+           ЗАГОЛОВКИ
+        ========================= */
 
         h1 {
             color: #ff1493;
+
             font-size: 48px;
-            text-shadow: 0 0 10px #ff1493,
-                         0 0 25px #ff1493
-                         0 0 45px #ff1493
+
+            margin: 30px 15px;
+
+            text-shadow:
+                0 0 10px #ff1493,
+                0 0 25px #ff1493,
+                0 0 45px #ff1493;
         }
 
         h2 {
             color: #00d9ff;
-            text-shadow: 0 0 10px #00d9ff
-                         0 0 25px;
+
+            font-size: 30px;
+
+            text-shadow:
+                0 0 10px #00d9ff,
+                0 0 25px #00d9ff;
         }
 
         p {
             color: #eeeeee;
+
             font-size: 20px;
+
+            line-height: 1.5;
         }
 
-        /*КАРТОЧКИ*/
+
+        /* =========================
+           КАРТИНКА
+        ========================= */
+
+        img {
+            display: block;
+
+            width: 200px;
+            max-width: 70%;
+
+            margin: 25px auto;
+
+            border-radius: 20px;
+
+            border: 3px solid #ff1493;
+
+            box-shadow:
+                0 0 10px #ff1493,
+                0 0 30px #ff1493;
+        }
+
+
+        /* =========================
+           КАРТОЧКИ
+        ========================= */
 
         .card {
-            background: rgba(15, 5, 35, 0.9);
             width: 80%;
             max-width: 500px;
+
             margin: 50px auto;
+
             padding: 30px;
+
+            background: rgba(15, 5, 35, 0.9);
+
             border-radius: 25px;
 
             border: 2px solid #00d9ff;
@@ -98,31 +170,24 @@
                 0 0 35px rgba(255, 20, 147, 0.6);
         }
 
-        /* КАРТИНКА */
 
-        img {
-            display: block;
-            width: 200px;
-            margin: 25px auto;
-            border-radius: 20px;
-
-            border: 3px solid #ff1493;
-
-            box-shadow:
-                0 0 10px #ff1493,
-                0 0 30px #ff1493;
-        }
-
-        /* КНОПКИ */
+        /* =========================
+           КНОПКИ
+        ========================= */
 
         button {
             display: block;
+
+            width: auto;
+
             margin: 20px auto;
 
             background: transparent;
+
             color: #00d9ff;
 
             border: 2px solid #00d9ff;
+
             padding: 12px 25px;
 
             border-radius: 12px;
@@ -137,7 +202,9 @@
 
         button:hover {
             color: white;
+
             background: #ff1493;
+
             border-color: #ff1493;
 
             box-shadow:
@@ -147,18 +214,26 @@
             transform: scale(1.07);
         }
 
-        /* ПОЛЕ ВВОДА */
+
+        /* =========================
+           ПОЛЕ ИГРЫ
+        ========================= */
 
         input {
             padding: 12px;
+
             font-size: 18px;
+
             width: 80px;
+
             text-align: center;
 
             background: #09001c;
+
             color: white;
 
             border: 2px solid #00d9ff;
+
             border-radius: 10px;
 
             outline: none;
@@ -170,134 +245,207 @@
                 0 0 20px #00d9ff;
         }
 
+
+        /* =========================
+           📱 ТЕЛЕФОН
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding-top: 75px;
+            }
+
+
+            /* Меню */
+
+            nav {
+                padding: 17px 5px;
+            }
+
+            nav a {
+                margin: 0 6px;
+
+                font-size: 14px;
+            }
+
+            nav a:hover {
+                font-size: 14px;
+            }
+
+
+            /* Заголовок */
+
+            h1 {
+                font-size: 31px;
+
+                line-height: 1.2;
+
+                margin: 25px 15px;
+            }
+
+            h2 {
+                font-size: 25px;
+            }
+
+            p {
+                font-size: 17px;
+
+                line-height: 1.5;
+            }
+
+
+            /* Картинка */
+
+            img {
+                width: 160px;
+
+                max-width: 60%;
+
+                margin: 20px auto;
+            }
+
+
+            /* Карточки */
+
+            .card {
+                width: calc(100% - 24px);
+
+                margin: 30px auto;
+
+                padding: 22px 15px;
+
+                border-radius: 20px;
+            }
+
+
+            /* Кнопки */
+
+            button {
+                width: 90%;
+
+                max-width: 300px;
+
+                padding: 13px 15px;
+
+                font-size: 16px;
+            }
+
+
+            /* Поле */
+
+            input {
+                width: 70px;
+
+                font-size: 17px;
+            }
+
+        }
+
     </style>
-
-    /* 📱 ТЕЛЕФОН */
-
-@media (max-width: 600px) {
-
-    body {
-        padding-top: 75px;
-        overflow-x: hidden;
-    }
-
-    /* Меню */
-
-    nav {
-        padding: 18px 0;
-    }
-
-    nav a {
-        margin: 0 8px;
-        font-size: 15px;
-    }
-
-    nav a:hover {
-        font-size: 15px;
-    }
-
-    /* Главный заголовок */
-
-    h1 {
-        font-size: 32px;
-        margin: 25px 15px;
-    }
-
-    h2 {
-        font-size: 25px;
-    }
-
-    p {
-        font-size: 17px;
-        line-height: 1.5;
-    }
-
-    /* Картинка */
-
-    img {
-        width: 160px;
-        max-width: 70%;
-    }
-
-    /* Карточки */
-
-    .card {
-        box-sizing: border-box;
-        width: calc(100% - 30px);
-        margin: 30px auto;
-        padding: 22px 15px;
-        border-radius: 20px;
-    }
-
-    /* Кнопки */
-
-    button {
-        width: 90%;
-        max-width: 300px;
-        padding: 12px 15px;
-        font-size: 16px;
-    }
-
-    /* Поле игры */
-
-    input {
-        width: 65px;
-        font-size: 17px;
-    }
-}
 </head>
+
 
 <body id="top">
 
+
+    <!-- МЕНЮ -->
+
     <nav>
-        <a href="#top">Главная</a>
-        <a href="#about">Обо мне</a>
-        <a href="#game">Игра</a>
+
+        <a href="#top">
+            Главная
+        </a>
+
+        <a href="#about">
+            Обо мне
+        </a>
+
+        <a href="#game">
+            Игра
+        </a>
+
     </nav>
 
-    <h1>Приветствую, дружище! ⚡</h1>
 
-    <p id="text">Это мой первый сайт!</p>
+    <!-- ГЛАВНАЯ -->
 
-    <img src="myphoto.jpg" alt="Моя картинка">
+    <h1>
+        Приветствую, дружище! ⚡
+    </h1>
 
-    <button onclick="sayHello()">Нажми меня</button>
+    <p id="text">
+        Это мой первый сайт!
+    </p>
 
-    <button onclick="changeColor()">Сменить тему</button>
+
+    <img
+        src="myphoto.jpg"
+        alt="Моя картинка"
+    >
+
+
+    <button onclick="sayHello()">
+        Нажми меня
+    </button>
+
+
+    <button onclick="changeColor()">
+        Сменить тему
+    </button>
+
 
 
     <!-- ОБО МНЕ -->
 
-    <section class="card" id="about">
+    <section
+        class="card"
+        id="about"
+    >
 
-        <h2>👤 Обо мне</h2>
+        <h2>
+            👤 Обо мне
+        </h2>
 
         <p>
             Я начинающий веб-разработчик
             и это мой первый сайт!
         </p>
 
+
         <button onclick="showSecret()">
             Показать секрет 👀
         </button>
 
-        <p id="secret" style="display: none;">
-            секрета не будет🤫 
+
+        <p
+            id="secret"
+            style="display: none;"
+        >
+            🤫 Я только начинаю учиться
+            создавать сайты!
         </p>
 
     </section>
 
 
+
     <!-- ИГРА -->
 
-    <section class="card" id="game">
+    <section
+        class="card"
+        id="game"
+    >
 
-        <h2>🎯 Угадай число</h2>
+        <h2>
+            🎯 Угадай число
+        </h2>
 
         <p>
             Я загадала число от 1 до 10.
             Попробуй угадать!
         </p>
+
 
         <input
             id="guess"
@@ -306,15 +454,19 @@
             max="10"
         >
 
+
         <button onclick="checkGuess()">
             Проверить
         </button>
+
 
         <button onclick="newGame()">
             🔄 Новая игра
         </button>
 
+
         <p id="result"></p>
+
 
         <p>
             🏆 Победы:
@@ -324,47 +476,82 @@
     </section>
 
 
+
+    <!-- JAVASCRIPT -->
+
     <script>
 
+
+        /* =========================
+           КНОПКА «НАЖМИ МЕНЯ»
+        ========================= */
+
         function sayHello() {
+
             document.getElementById("text").textContent =
                 "Спасибо за внимание! 💖";
+
         }
 
 
+
+        /* =========================
+           СМЕНА ТЕМЫ
+        ========================= */
+
         let pinkTheme = false;
 
-        function changeColor() {
 
-            if (pinkTheme === false) {
+        function changeColor() {if (pinkTheme === false) {
 
-                document.body.style.backgroundColor = "#18001f";
+                document.body.style.backgroundColor =
+                    "#18001f";
 
                 pinkTheme = true;
 
             } else {
 
-                document.body.style.backgroundColor = "#050014";
+                document.body.style.backgroundColor =
+                    "#050014";
 
                 pinkTheme = false;
+
             }
+
         }
 
 
-        let wins = Number(localStorage.getItem("wins")) || 0;
+
+        /* =========================
+           СОХРАНЕНИЕ ПОБЕД
+        ========================= */
+
+        let wins =
+            Number(localStorage.getItem("wins")) || 0;
+
+
         let gameWon = false;
 
-        document.getElementById("wins").textContent = wins;
 
+        document.getElementById("wins").textContent =
+            wins;
+
+
+
+        /* =========================
+           ИГРА
+        ========================= */
 
         let secretNumber =
             Math.floor(Math.random() * 10) + 1;
+
 
 
         function checkGuess() {
 
             let guess =
                 document.getElementById("guess").value;
+
 
             let result =
                 document.getElementById("result");
@@ -375,53 +562,81 @@
                 result.textContent =
                     "🎉 Ты угадала!";
 
+
                 if (gameWon === false) {
 
                     wins = wins + 1;
 
-                    localStorage.setItem("wins", wins);
+
+                    localStorage.setItem(
+                        "wins",
+                        wins
+                    );
+
 
                     document.getElementById("wins")
                         .textContent = wins;
 
+
                     gameWon = true;
+
                 }
+
 
             } else if (guess < secretNumber) {
 
                 result.textContent =
                     "👀 Слишком мало!";
 
+
             } else {
 
                 result.textContent =
                     "😏 Слишком много!";
+
             }
+
         }
 
+
+
+        /* =========================
+           НОВАЯ ИГРА
+        ========================= */
 
         function newGame() {
 
             secretNumber =
                 Math.floor(Math.random() * 10) + 1;
 
+
             gameWon = false;
+
 
             document.getElementById("guess")
                 .value = "";
 
+
             document.getElementById("result")
                 .textContent = "";
+
         }
 
+
+
+        /* =========================
+           СЕКРЕТ
+        ========================= */
 
         function showSecret() {
 
             document.getElementById("secret")
                 .style.display = "block";
+
         }
 
     </script>
 
 </body>
+
 </html>
